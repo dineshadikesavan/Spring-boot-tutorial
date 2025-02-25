@@ -1,0 +1,44 @@
+server:
+  port: '8083'
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/my_schema?useUnicode=true&characterEncoding=UTF-8
+    password: Born2win@chennai1
+  application:
+    name: Spring-boot-tutorial
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/my_schema_qa?useUnicode=true&characterEncoding=UTF-8
+    password: Born2win@chennai1
+  application:
+    name: Spring-boot-tutorial
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+
+com:
+  tsc:
+    config: TSC Config Data
